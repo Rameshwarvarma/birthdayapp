@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+    <style>
+        table, th, td{
+        border: 1px solid black;
+        width: 50%;
+        text-align: center;
+        border-collapse: collapse;
+        font-family: arial, verdana, sans-serif;
+        }
+        body{
+        background-color:#ADD8E6;
+        }
+
+        td {
+        padding:5px;
+        background-color: #2E8B57;
+        font-family: monospace;
+        font-size: 15px;
+        font-weight: bold;
+        }
+
+        th {padding: 7px;
+        background-color: #008080;
+        color: black;
+        }
+
+        h2{
+        color:black;
+        font-weight:bold;
+        }
+
+
+    </style>
+</head>
+<body>
+<center>
+    <h2> Employees Bio's </h2>
+    <table class = "table table-striped table-bordered table-sm">
+        <thead class="thread black">
+        <tr>
+            <th> Employee Name </th>
+            <th> Employee Date of birth </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for emp in birthday %}
+        <tr>
+            <td>{{emp.name}}</td>
+            <td>{{emp.Date_of_birth}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</center>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Birthday Details</title>
+    <style>
+
+div {
+  text-align: center;
+  font-family:cursive;
+  font-size: 20px;
+  display: block;
+  width:100%
+  align:center;
+}
+
+
+button {
+  transition-duration: 0.4s;
+  padding: 15px 32px;
+  font-size:15px;
+  color:black;
+}
+
+button:hover {
+  background-color: #4CAF50; /* Green */
+  color: black;
+
+}
+
+body{
+background-color:#F5DEB3;
+color:#483D8B;
+font-weight:bold;
+}
+
+h3{
+color:black;
+}
+
+</style>
+</head>
+<body>
+<center>
+    <form method="POST" class="post-form" action = "/details">
+        {% csrf_token %}
+
+        {% if form.errors %}
+        <p> Entered data is invalid </p>
+        {% endif %}
+
+        <div class="container">
+            <br>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <h3> Enter details </h3>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label">Employee Name</label>
+                <div class="col-sm-4">
+                    {{ form.name }}
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label">Employee Date of birth</label>
+                <div class="col-sm-4">
+                    {{form.Date_of_birth}}
+                </div>
+                <h6> Format should be YYYY-mm-dd </h6>
+            </div>
+
+
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label"></label>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+        </div>
+
+    </form>
+</center>
+</body>
+</html>

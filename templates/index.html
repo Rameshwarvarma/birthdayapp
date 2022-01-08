@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+    <style>
+
+       body{
+        background-color:#008080;
+        justify-content:center;
+        }
+
+        h1 {
+        color: #191970;
+        font-family: "Lucida Console", "Courier New", monospace;
+        font-size:50px;
+        }
+
+        a{
+        font-size: 20px;
+        font-family: cursive;
+        color:#000000;
+        }
+
+        /* unvisited link */
+        a:link {
+        color: red;
+        }
+
+        /* visited link */
+        a:visited {
+        color: black;
+        }
+
+        /* mouse over link */
+        a:hover {
+        color: green;
+        }
+
+        /* selected link */
+        a:active {
+         color: blue;
+        }
+
+        p{
+        font-size: 30px;
+        font-family: cursive;
+        color:#4B0082;
+        }
+
+    </style>
+</head>
+<body>
+<center>
+
+    <h1> Welcome to Birthday App </h1>
+
+    {% for emp in birthdays %}
+    <p> Wishing you {{emp.name}} a very happy birthday </p>
+    {% endfor %}
+
+     <a href="/details" class="btn btn-success"> Click ME!! to add Data</a>
+</center>
+</body>
+</html>
+
